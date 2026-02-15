@@ -1,5 +1,4 @@
 import { Hono } from 'hono'
-import { html } from 'hono/html'
 import { Layout } from './layout'
 import { HomePage } from './pages/home'
 import { RankPage } from './pages/rank'
@@ -16,23 +15,23 @@ type Bindings = {
 const app = new Hono<{ Bindings: Bindings }>()
 
 app.get('/', (c) => {
-  return c.html(html`${Layout({ children: HomePage() })}`)
+  return c.html(<Layout><HomePage /></Layout>)
 })
 
 app.get('/rank', (c) => {
-  return c.html(html`${Layout({ children: RankPage(), title: '排行榜' })}`)
+  return c.html(<Layout title="排行榜"><RankPage /></Layout>)
 })
 
 app.get('/combo', (c) => {
-  return c.html(html`${Layout({ children: ComboPage(), title: '神组合' })}`)
+  return c.html(<Layout title="神组合"><ComboPage /></Layout>)
 })
 
 app.get('/history', (c) => {
-  return c.html(html`${Layout({ children: HistoryPage(), title: '历史数据' })}`)
+  return c.html(<Layout title="历史数据"><HistoryPage /></Layout>)
 })
 
 app.get('/profile', (c) => {
-  return c.html(html`${Layout({ children: ProfilePage(), title: '我的' })}`)
+  return c.html(<Layout title="我的"><ProfilePage /></Layout>)
 })
 
 export default app

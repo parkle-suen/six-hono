@@ -2,15 +2,15 @@ import { FC } from 'hono/jsx'
 
 export const HomePage: FC = () => (
   <div class="p-4 space-y-4">
-    <div class="carousel rounded-box w-full h-[20vh]">
+    <div class="carousel rounded-box w-full h-40">
       <div class="carousel-item w-full">
-        <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" alt="广告1" class="w-full h-full object-cover" />
+        <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" alt="广告1" class="w-full object-cover" />
       </div>
       <div class="carousel-item w-full">
-        <img src="https://img.daisyui.com/images/stock/photo-1565018442519-bc4b44169191.webp" alt="广告2" class="w-full h-full object-cover" />
+        <img src="https://img.daisyui.com/images/stock/photo-1565018442519-bc4b44169191.webp" alt="广告2" class="w-full object-cover" />
       </div>
       <div class="carousel-item w-full">
-        <img src="https://img.daisyui.com/images/stock/photo-1572635196237-14b3f281503f.webp" alt="广告3" class="w-full h-full object-cover" />
+        <img src="https://img.daisyui.com/images/stock/photo-1572635196237-14b3f281503f.webp" alt="广告3" class="w-full object-cover" />
       </div>
     </div>
 
