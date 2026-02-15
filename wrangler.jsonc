@@ -2,37 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "six-hono",
   "main": "src/index.ts",
-  "compatibility_date": "2026-02-13"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "compatibility_date": "2026-02-13",
+  "vars": {
+    "TURSO_DATABASE_URL": "libsql://six-hono-testlibsql.aws-ap-northeast-1.turso.io",
+    "TURSO_AUTH_TOKEN": "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NzEwMjA1NDAsImlkIjoiZTk2OTRlYWMtNTYzMi00ZDlkLTkyOWEtNTM0YjY0NDBjZTg2IiwicmlkIjoiYzFhMzZhOTctY2FhZS00MDI3LTg3NDgtOTM2OTcxMGFiMDlhIn0.m2ib_i6KqU08dl-tZrsau2QoQA08R-rM4OUqIvNdhHbIm_ro6N3QD54gP0bTV2kYF7nvTeXU9GPlO2hbN_lCBA",
+    "TELEGRAM_BOT_TOKEN": "5082785360:AAFlhP6gC6gQEKEAACxbtzvuzYW4L6IdB_Y"
+  }
 }

@@ -1,17 +1,38 @@
 import { Hono } from 'hono'
+import { html } from 'hono/html'
+import { Layout } from './layout'
+import { HomePage } from './pages/home'
+import { RankPage } from './pages/rank'
+import { ComboPage } from './pages/combo'
+import { HistoryPage } from './pages/history'
+import { ProfilePage } from './pages/profile'
 
-const app = new Hono()
+type Bindings = {
+  TURSO_DATABASE_URL: string
+  TURSO_AUTH_TOKEN: string
+  TELEGRAM_BOT_TOKEN: string
+}
+
+const app = new Hono<{ Bindings: Bindings }>()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.html(html`<${Layout}><${HomePage} /></${Layout}>`)
 })
 
-app.get('/try', (c) => {
-  return c.text('Try Hono!')
+app.get('/rank', (c) => {
+  return c.html(html`<${Layout} title="排行榜"><${RankPage} /></${Layout}>`)
 })
 
-app.get('/try2', (c) => {
-  return c.text('Try Hono 2!')
+app.get('/combo', (c) => {
+  return c.html(html`<${Layout} title="神组合"><${ComboPage} /></${Layout}>`)
+})
+
+app.get('/history', (c) => {
+  return c.html(html`<${Layout} title="历史数据"><${HistoryPage} /></${Layout}>`)
+})
+
+app.get('/profile', (c) => {
+  return c.html(html`<${Layout} title="我的"><${ProfilePage} /></${Layout}>`)
 })
 
 export default app
